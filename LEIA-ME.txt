@@ -1,0 +1,6 @@
+Passo a passo para a execução do arquivo:
+
+1 - Clone ou baixe o arquivo;
+2 - Dê as permissões com o comando chmod +x install-PRIME.py;
+3 - Execute com o comando ./install-PRIME.py;
+4 - Siga as instruções do script.
