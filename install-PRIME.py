@@ -254,7 +254,6 @@ function commom {
     espace
 
     echo 'Logue-se como root.'
-    sudo su
     espace
     echo 'Removendo o Bumbleblee.'
     espace
