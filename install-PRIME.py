@@ -15,6 +15,12 @@
 # Use it at your own risk. So, if you find errors, report them. Any and all contributions are always welcome. 
 # My nickname on the Telegram is @FVGuilherme.
 
+function espace {
+    echo''
+    echo '============================================================'
+    echo ''
+}
+
 function LightDM {
     espace
     echo 'LightDM é o DM escolhido. Iniciando as operações necessárias...'
@@ -335,7 +341,7 @@ function inicio {
 
     1 - Sim, quero prosseguir.
     2 - Não, vou fazê-lo.'
-
+    echo 'Resposta: '
     echo ''
         read inicio
         case $inicio in
