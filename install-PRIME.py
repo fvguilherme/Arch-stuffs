@@ -215,7 +215,7 @@ function GDM {
     espace
     echo ' Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
-    echo '[Desktop Entry]
+    sudo echo '[Desktop Entry]
     Type=Application
     Name=Optimus
     Exec=/usr/local/bin/optimus.sh
@@ -239,7 +239,7 @@ function SDDM {
     espace
     echo ' Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
-    echo 'xrandr --setprovideroutputsource modesetting NVIDIA-0
+    sudo echo 'xrandr --setprovideroutputsource modesetting NVIDIA-0
     xrandr --auto' >> /usr/share/sddm/scripts/Xsetup
     echo ''
     espace
@@ -275,7 +275,7 @@ function commom {
     espace
 
     sudo rm -f /etc/X11/xorg.conf.d/90-mhwd.conf
-    echo 'Section "Module"
+    sudo echo 'Section "Module"
     Load "modesetting"
 EndSection
       
@@ -293,7 +293,7 @@ EndSection' > /etc/X11/xorg.conf.d/optimus.conf
     sudo rm /etc/modprobe.d/mhwd*
     echo ''
 
-    echo 'blacklist nouveau
+    sudo echo 'blacklist nouveau
 blacklist nvidiafb
 blacklist rivafb' > /etc/modprobe.d/nvidia.conf
     echo ''
@@ -316,8 +316,8 @@ function DM_choice {
           1 - LightDM;
           2 - GDM;
           3 - SDDM.'
-    espace
     read OPT
+    espace
     case $OPT in
         1) LightDM
         ;;
@@ -340,8 +340,8 @@ function inicio {
     echo 'Você verificou aquilo descrito acima?
 
     1 - Sim, quero prosseguir.
-    2 - Não, vou fazê-lo.'
-    echo 'Resposta: '
+    2 - Não, vou fazê-lo.
+    Resposta:'
     echo ''
         read inicio
         case $inicio in
