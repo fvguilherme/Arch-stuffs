@@ -1,4 +1,3 @@
-#!/usr/bin/python3.7
 
 # Descrição (PT-BR)
 
@@ -15,13 +14,6 @@
 # to have made errors during script creation, which may cause problems on your machine, whether hardware or software. 
 # Use it at your own risk. So, if you find errors, report them. Any and all contributions are always welcome. 
 # My nickname on the Telegram is @FVGuilherme.
-
-
-function espace {
-    echo ''
-    echo '============================================================'
-    echo ''
-}
 
 function LightDM {
     espace
@@ -249,7 +241,11 @@ function SDDM {
     espace
 }    
 
+
 function commom {
+    espace
+    echo 'ATENÇÃO! Antes de prosseguir o BusID da sua placa dedicada com o comando *lspci | grep -E "VGA|3D"*. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
+    espace
     espace
     echo 'Iniciando a instalação do PRIME.'
     espace
