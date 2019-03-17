@@ -250,12 +250,11 @@ function SDDM {
 
 function commom {
     espace
-    echo 'ATENÇÃO! Antes de prosseguir o BusID da sua placa dedicada com o comando *lspci | grep -E "VGA|3D"*. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
-    espace
-    espace
     echo 'Iniciando a instalação do PRIME.'
     espace
 
+    echo 'Logue-se como root.'
+    sudo su
     espace
     echo 'Removendo o Bumbleblee.'
     espace
