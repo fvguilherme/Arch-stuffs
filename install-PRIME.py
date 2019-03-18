@@ -252,8 +252,7 @@ function commom {
     espace
     echo 'Iniciando a instalação do PRIME.'
     espace
-
-    echo 'Logue-se como root.'
+    
     espace
     echo 'Removendo o Bumbleblee.'
     espace
