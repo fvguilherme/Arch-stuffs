@@ -210,10 +210,10 @@ display-setup-script=/usr/local/bin/optimus.sh
 
 function GDM {
     espace
-    echo 'GDM é o DM escolhido. Iniciando as operações necessárias...'
+    echo '      GDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
     espace
-    echo ' Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
+    echo '      Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
     sudo echo '[Desktop Entry]
     Type=Application
@@ -222,39 +222,39 @@ function GDM {
     NoDisplay=true
     X-GNOME-Autostart-Phase=DisplayServer' > /usr/local/share/optimus.desktop
     echo ''
-    echo 'Linkando o arquivo criado (/usr/local/share/optimus.desktop) para iniciar com o GDM.'
+    echo '      Linkando o arquivo criado (/usr/local/share/optimus.desktop) para iniciar com o GDM.'
     echo ''
     sudo ln -s /usr/local/share/optimus.desktop /usr/share/gdm/greeter/autostart/optimus.desktop
     sudo ln -s /usr/local/share/optimus.desktop /etc/xdg/autostart/optimus.desktop
     echo ''
     espace
-    echo 'Instalação finalizada! Reinicie a máquina. =)'
+    echo '      Instalação finalizada! Reinicie a máquina. =)'
     espace
 }
     
 function SDDM {
     espace
-    echo 'SDDM é o DM escolhido. Iniciando as operações necessárias...'
+    echo '      SDDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
     espace
-    echo ' Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
+    echo '      Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
     sudo echo 'xrandr --setprovideroutputsource modesetting NVIDIA-0
     xrandr --auto' >> /usr/share/sddm/scripts/Xsetup
     echo ''
     espace
-    echo 'Instalação finalizada! Reinicie a máquina. =)'
+    echo '      Instalação finalizada! Reinicie a máquina. =)'
     espace
 }    
 
 
 function commom {
     espace
-    echo 'Iniciando a instalação do PRIME.'
+    echo '      Iniciando a instalação do PRIME.'
     espace
     
     espace
-    echo 'Removendo o Bumbleblee.'
+    echo '      Removendo o Bumbleblee.'
     espace
     sudo mhwd -f -r pci video-hybrid-intel-nvidia-bumblebee
     sudo mhwd -f -r pci video-linux 
@@ -262,13 +262,13 @@ function commom {
     echo ''
 
     espace
-    echo 'Instalando o driver da NVidia.'
+    echo '      Instalando o driver da NVidia.'
     espace
     sudo mhwd -i pci video-nvidia
     echo ''
 
     espace
-    echo 'Setando uma nova configuração do mhwd para o Xorg.'
+    echo '      Setando uma nova configuração do mhwd para o Xorg.'
     espace
 
     sudo rm -f /etc/X11/xorg.conf.d/90-mhwd.conf
@@ -296,13 +296,13 @@ blacklist rivafb' > /etc/modprobe.d/nvidia.conf
     echo ''
 
     espace
-    echo ' Criando o nvidia-drm.modeset.'
+    echo '      Criando o nvidia-drm.modeset.'
     espace
     sudo echo 'options nvidia_drm modeset=1' > /etc/modprobe.d/nvidia-drm.conf
     echo ''
 
     espace
-    echo ' Hora de escolher qual é o seu Display Manager (DM). PRESTE MUITA ATENÇÃO. Escolher o DM errado provavelmente implicará em tela preta.'
+    echo '      Hora de escolher qual é o seu Display Manager (DM). PRESTE MUITA ATENÇÃO. Escolher o DM errado provavelmente implicará em tela preta.'
     espace
 
 }
@@ -328,13 +328,13 @@ function DM_choice {
 
 function inicio {
     espace
-    echo 'ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
+    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
     echo ''
     echo 'Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
 
     sudo pacman-mirrors -g && sudo pacman -Syyuu'
     espace
-    echo 'Você verificou aquilo descrito acima?
+    echo '      Você verificou aquilo descrito acima?
 
     1 - Sim, quero prosseguir.
     2 - Não, vou fazê-lo.
