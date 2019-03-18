@@ -1,6 +1,8 @@
 Passo a passo para a execução do arquivo:
 
-1 - Clone ou baixe o arquivo;
-2 - Dê as permissões com o comando chmod +x install-PRIME.py;
-3 - Execute com o comando ./install-PRIME.py;
-4 - Siga as instruções do script.
+1 - Logue-se como root ($ sudo su);
+2 - Clone ou baixe o arquivo em /pasta/preferida/;
+3 - Dê as permissões com o comando $ chmod +x /pasta/preferida/install-PRIME.py;
+4 - Execute com o comando $ ./install-PRIME.py;
+5 - Siga as instruções do script;
+6 - Reinicie a máquina.
