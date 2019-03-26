@@ -352,5 +352,7 @@ function inicio {
 
 inicio
 
+# Referências
 
-
+# [1] https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
+# [2] https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup#Introduction
