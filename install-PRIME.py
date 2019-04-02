@@ -291,8 +291,8 @@ EndSection' > /etc/X11/xorg.conf.d/optimus.conf
     echo ''
 
     sudo echo 'blacklist nouveau
-blacklist nvidiafb
-blacklist rivafb' > /etc/modprobe.d/nvidia.conf
+    blacklist nvidiafb
+    blacklist rivafb' > /etc/modprobe.d/nvidia.conf
     echo ''
 
     espace
