@@ -464,7 +464,7 @@ function commom {
     espace
     echo '      Instalando o driver da NVidia.'
     espace
-    sudo mhwd -i -f pci video-nvidia
+    sudo mhwd -i pci -f pci video-nvidia
     echo ''
 
     espace
