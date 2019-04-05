@@ -213,8 +213,9 @@ function LightDM_Cinnamon {
     echo 'LightDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
     espace
-    echo 'Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
+    echo 'Setando a fonte de saída de acordo com o seu DM (gerenciador de login) e instalando o xorg-xrandr.'
     espace
+    sudo pacman -Syu xorg-xrandr
     echo '#!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto' > /usr/local/bin/optimus.sh
