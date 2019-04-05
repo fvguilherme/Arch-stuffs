@@ -281,6 +281,7 @@ Section "Device"
     Driver "nvidia"
     BusID "PCI:1:0:0"
     Option "AllowEmptyInitialConfiguration"
+    Option "DPI" "96x96"
 EndSection' > /etc/X11/xorg.conf.d/optimus.conf
     echo ''
 
