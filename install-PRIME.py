@@ -482,7 +482,10 @@ Section "Device"
     Driver "nvidia"
     BusID "PCI:1:0:0"
     Option "AllowEmptyInitialConfiguration"
-    Option "DPI" "96x96"
+    Option "metamodes" "nvidia-auto-select +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+    Option "DPI" "96 x 96"
+    Option "AllowIndirectGLXProtocol" "off"
+    Option "TripleBuffer" "on"
 EndSection' > /etc/X11/xorg.conf.d/optimus.conf
     echo ''
 
