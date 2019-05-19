@@ -442,6 +442,7 @@ function SDDM {
     espace
     sudo echo 'xrandr --setprovideroutputsource modesetting NVIDIA-0
     xrandr --auto' >> /usr/share/sddm/scripts/Xsetup
+    chmod +x /usr/share/sddm/scripts/Xsetup
     echo ''
     espace
     echo '      Instalação finalizada! Reinicie a máquina. =)'
