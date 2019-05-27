@@ -484,7 +484,6 @@ Section "Device"
     BusID       "PCI:1:0:0"
     Option      "AllowEmptyInitialConfiguration"
     Option      "DPI" "96x96"
-    Option      "metamodes" "nvidia-auto-select +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
     Option      "AllowIndirectGLXProtocol" "off"
     Option      "TripleBuffer" "on"
 EndSection
