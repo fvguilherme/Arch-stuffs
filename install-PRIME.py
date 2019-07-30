@@ -537,7 +537,7 @@ function DM_choice {
 
 function inicio {
     espace
-    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
+    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando *** lspci | grep -E "VGA|3D" ***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script (linha 484) com o valor do BusID correspodente a sua placa.'
     echo ''
     echo '      Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
 
