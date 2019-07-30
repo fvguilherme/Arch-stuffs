@@ -1,5 +1,5 @@
 
-# Descrição (PT-BR)
+ Descrição (PT-BR)
 
 # Este script é uma automatização do HowTo criado pelo @jonathon (https://forum.manjaro.org/u/jonathon),
 # um moderador do fórum oficial da distribuição linux Manjaro (https://forum.manjaro.org). Me reservo o direito de ter 
