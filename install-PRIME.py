@@ -458,15 +458,13 @@ function commom {
     espace
     echo '      Removendo o Bumbleblee.'
     espace
-    sudo mhwd -f -r pci video-hybrid-intel-nvidia-bumblebee
-    sudo mhwd -f -r pci video-linux 
-    sudo mhwd -f -r pci video-vesa
+    sudo pacman -Rns bumblebee
     echo ''
 
     espace
     echo '      Instalando o driver da NVidia.'
     espace
-    sudo mhwd -f -i pci video-nvidia
+    sudo pacman -Syyu nvidia
     echo ''
 
     espace
@@ -537,11 +535,11 @@ function DM_choice {
 
 function inicio {
     espace
-    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
+    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script (linha 482) com o valor do BusID correspodente a sua placa.'
     echo ''
-    echo 'Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
+    echo '      Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
 
-    sudo pacman-mirrors -g && sudo pacman -Syyuu'
+    sudo pacman -Syyu'
     espace
     echo '      Você verificou aquilo descrito acima?
 
@@ -565,3 +563,6 @@ inicio
 
 # [1] https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225
 # [2] https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup#Introduction
+# [3] https://wiki.archlinux.org/index.php/NVIDIA
+# [4] https://wiki.archlinux.org/index.php/Bumblebee
+# [5] https://wiki.archlinux.org/index.php/Intel
