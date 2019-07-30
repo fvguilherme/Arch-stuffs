@@ -16,7 +16,7 @@
 # My nickname on the Telegram is @FVGuilherme.
 
 function espace {
-    echo''
+    echo ''
     echo '============================================================'
     echo ''
 }
@@ -29,8 +29,8 @@ function LightDM_XFCE {
     echo 'Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
     echo '#!/bin/sh
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto' > /usr/local/bin/optimus.sh
+    xrandr --setprovideroutputsource modesetting NVIDIA-0
+    xrandr --auto' > /usr/local/bin/optimus.sh
     chmod a+rx /usr/local/bin/optimus.sh
     echo ''
     echo '#
@@ -217,8 +217,8 @@ function LightDM_Cinnamon {
     espace
     sudo pacman -Syu xorg-xrandr
     echo '#!/bin/sh
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto' > /usr/local/bin/optimus.sh
+    xrandr --setprovideroutputsource modesetting NVIDIA-0
+    xrandr --auto' > /usr/local/bin/optimus.sh
     chmod a+rx /usr/local/bin/optimus.sh
     echo ''
     echo '
