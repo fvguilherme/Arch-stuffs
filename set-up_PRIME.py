@@ -5,7 +5,7 @@
 # um moderador do fórum oficial da distribuição linux Manjaro (https://forum.manjaro.org). Me reservo o direito de ter 
 # cometido erros durante a criação no script, que possam causar problemas em sua máquina, sejam de hardware ou de software. 
 # Utilize-o por sua conta e risco próprios. Então, caso encontre erros, reporte-os. Toda e qualquer contribuição é sempre 
-# bem vinda. Meu nickname no Telegram é @FVGuilherme.
+# bem vinda.
 
 # Description (EN-US)
 
@@ -13,7 +13,6 @@
 # a moderator of the official forum of the Manjaro Linux dsitribution (https://forum.manjaro.org). I reserve the right 
 # to have made errors during script creation, which may cause problems on your machine, whether hardware or software. 
 # Use it at your own risk. So, if you find errors, report them. Any and all contributions are always welcome. 
-# My nickname on the Telegram is @FVGuilherme.
 
 function espace {
     echo ''
