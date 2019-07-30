@@ -1,5 +1,5 @@
 
- Descrição (PT-BR)
+# Descrição (PT-BR)
 
 # Este script é uma automatização do HowTo criado pelo @jonathon (https://forum.manjaro.org/u/jonathon),
 # um moderador do fórum oficial da distribuição linux Manjaro (https://forum.manjaro.org). Me reservo o direito de ter 
@@ -409,7 +409,7 @@ session-wrapper=/etc/lightdm/Xsession
 }
 
 
-function GDM {
+function GDM_GNOME {
     espace
     echo '      GDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
@@ -433,7 +433,7 @@ function GDM {
     espace
 }
     
-function SDDM {
+function SDDM_KDE {
     espace
     echo '      SDDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
@@ -464,13 +464,13 @@ function commom {
     echo ''
 
     espace
-    echo '      Instalando o driver da NVidia.'
+    echo '      Instalando o driver da NVidia ("FUCK YOU! .i." by Torvalds =D).'
     espace
     sudo mhwd -f -i pci video-nvidia
     echo ''
 
     espace
-    echo '      Setando uma nova configuração do mhwd para o Xorg.'
+    echo '      Setando uma nova configuração do MHWD para o Xorg.'
     espace
 
     sudo rm -f /etc/X11/xorg.conf.d/90-mhwd.conf
@@ -527,11 +527,11 @@ function DM_choice {
         ;;
         2) LightDM_Cinnamon
         ;;
-        3) GDM
+        3) GDM_GNOME
         ;;
-        4) SDDM
+        4) SDDM_KDE
         ;;
-        *) echo "Era para escolher 1, 2 ou 3. Saindo..." && exit
+        *) echo "As opções são apenas 1, 2, 3 ou 4. Saindo..." && exit
     esac
 }
 
@@ -539,9 +539,9 @@ function inicio {
     espace
     echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script com o valor do BusID correspodente a sua placa.'
     echo ''
-    echo 'Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
+    echo '      Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
 
-    sudo pacman-mirrors -g && sudo pacman -Syyuu'
+    sudo pacman-mirrors -f5 && sudo pacman -Syyu'
     espace
     echo '      Você verificou aquilo descrito acima?
 
