@@ -28,6 +28,7 @@ function LightDM_XFCE {
     espace
     echo 'Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
+    sudo pacman -Syyu xorg-xrandr
     echo '#!/bin/sh
     xrandr --setprovideroutputsource modesetting NVIDIA-0
     xrandr --auto' > /usr/local/bin/optimus.sh
@@ -215,7 +216,7 @@ function LightDM_Cinnamon {
     espace
     echo 'Setando a fonte de saída de acordo com o seu DM (gerenciador de login) e instalando o xorg-xrandr.'
     espace
-    sudo pacman -Syu xorg-xrandr
+    sudo pacman -Syyu xorg-xrandr
     echo '#!/bin/sh
     xrandr --setprovideroutputsource modesetting NVIDIA-0
     xrandr --auto' > /usr/local/bin/optimus.sh
@@ -409,7 +410,7 @@ session-wrapper=/etc/lightdm/Xsession
 }
 
 
-function GDM {
+function GDM_GNOME {
     espace
     echo '      GDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
@@ -433,13 +434,14 @@ function GDM {
     espace
 }
     
-function SDDM {
+function SDDM_KDE {
     espace
     echo '      SDDM é o DM escolhido. Iniciando as operações necessárias...'
     espace
     espace
     echo '      Setando a fonte de saída de acordo com o seu DM (gerenciador de login).'
     espace
+    sudo pacman -Syyu xorg-xrandr
     sudo echo 'xrandr --setprovideroutputsource modesetting NVIDIA-0
     xrandr --auto' >> /usr/share/sddm/scripts/Xsetup
     chmod +x /usr/share/sddm/scripts/Xsetup
@@ -456,22 +458,20 @@ function commom {
     espace
     
     espace
-    echo '      Removendo o Bumbleblee.'
+    echo '      Removendo o Bumbleblee, caso esteja instalado.'
     espace
     sudo pacman -Rns bumblebee
     echo ''
 
     espace
-    echo '      Instalando o driver da NVidia.'
+    echo '      Instalando o driver da NVIDIA ("Fuck you! .i." by Torvalds =D).'
     espace
     sudo pacman -Syyu nvidia
     echo ''
 
     espace
-    echo '      Setando uma nova configuração do mhwd para o Xorg.'
+    echo '      Setando uma nova configuração para o Xorg.'
     espace
-
-    sudo rm -f /etc/X11/xorg.conf.d/90-mhwd.conf
     sudo echo 'Section "Module"
     Load "modesetting"
 EndSection
@@ -500,13 +500,13 @@ EndSection
     echo ''
 
     espace
-    echo '      Criando o nvidia-drm.modeset.'
+    echo '      Ativando o nvidia-drm.modeset.'
     espace
     sudo echo 'options nvidia_drm modeset=1' > /etc/modprobe.d/nvidia-drm.conf
     echo ''
 
     espace
-    echo '      Hora de escolher qual é o seu Display Manager (DM). PRESTE MUITA ATENÇÃO. Escolher o DM errado provavelmente implicará em tela preta.'
+    echo '      Hora de escolher qual é o seu Display Manager (DM). PRESTE MUITA ATENÇÃO. Escolher o DM errado provavelmente implicará em tela preta após reiniciar.'
     espace
 
 }
@@ -525,23 +525,23 @@ function DM_choice {
         ;;
         2) LightDM_Cinnamon
         ;;
-        3) GDM
+        3) GDM_GNOME
         ;;
-        4) SDDM
+        4) SDDM_KDE
         ;;
-        *) echo "Era para escolher 1, 2 ou 3. Saindo..." && exit
+        *) echo "As opções são apenas 1, 2, 3 ou 4. Saindo..." && exit
     esac
 }
 
 function inicio {
     espace
-    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando ***lspci | grep -E "VGA|3D"***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script (linha 482) com o valor do BusID correspodente a sua placa.'
+    echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando *** lspci | grep -E "VGA|3D" ***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script (linha 482) com o valor do BusID correspodente a sua placa.'
     echo ''
     echo '      Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
 
     sudo pacman -Syyu'
     espace
-    echo '      Você verificou aquilo descrito acima?
+    echo '      Você verificou as instruções descritas acima?
 
     1 - Sim, quero prosseguir.
     2 - Não, vou fazê-lo.
