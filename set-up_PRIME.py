@@ -536,6 +536,7 @@ function inicio {
     espace
     echo '      ATENÇÃO! Antes de prosseguir, verifique o BusID da sua placa dedicada (3D controller) com o comando *** lspci | grep -E "VGA|3D" ***. Se a saída for algo como 01:00.0, prossiga. Caso contrário, modifique o script (linha 482) com o valor do BusID correspodente a sua placa.'
     echo ''
+    echo '      Este script instala a versão 430.xx do driver da NVIDIA (nvidia). Se a sua placa for da arquiterura Fermi, por exemplo, você deve utilizar o driver 390xx (nvidia-390xx). Veja a arquitetura da sua GPU aqui: https://nouveau.freedesktop.org/wiki/CodeNames/.'
     echo '      Além disso, certifique-se que seu sistema está atualizado executando o comando abaixo.
 
     sudo pacman -Syyu'
