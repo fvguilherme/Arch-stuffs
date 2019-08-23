@@ -6,3 +6,13 @@ Passo a passo para a execução do arquivo:
 4 - Execute com o comando $ ./install-PRIME.py;
 5 - Siga as instruções do script;
 6 - Reinicie a máquina.
+
+
+Step by step:
+
+1 - Log in as root;
+2 - Clone the repository;
+3 - Give permissions ($ chmod +X install-PRIME.py)
+4 - Run it ($ ./install-PRIME.py)
+5 - Follow The instructions;
+6 - Reboot. 
