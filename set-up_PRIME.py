@@ -466,7 +466,7 @@ function commom {
     espace
     echo '      Instalando o driver da NVidia ("FUCK YOU! .i." by Torvalds =D).'
     espace
-    sudo mhwd -f -i pci video-nvidia
+    sudo mhwd -f -a pci nonfree 0300
     echo ''
 
     espace
